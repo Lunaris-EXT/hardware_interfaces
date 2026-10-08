@@ -41,6 +41,9 @@ interface IRadioModem {
    * @deprecated use getImei(int serial)
    */
   oneway void getDeviceIdentity(in int serial);
+  /**
+   * @deprecated Android Telephony framework doesn't use this.
+   */
   oneway void getHardwareConfig(in int serial);
   oneway void getModemActivityInfo(in int serial);
   oneway void getModemStackStatus(in int serial);
@@ -49,6 +52,9 @@ interface IRadioModem {
    * @deprecated NV APIs are deprecated starting from Android U.
    */
   oneway void nvReadItem(in int serial, in android.hardware.radio.modem.NvItem itemId);
+  /**
+   * @deprecated use IRadioConfig.rebootModem()
+   */
   oneway void nvResetConfig(in int serial, in android.hardware.radio.modem.ResetNvType resetType);
   /**
    * @deprecated NV APIs are deprecated starting from Android U.

@@ -52,4 +52,13 @@ union SoundParameter {
   int digitalOutputDelayMs;
   boolean activeProfile;
   android.hardware.tv.mediaquality.SoundStyle soundStyle;
+  int balanceSpeaker;
+  int balanceBluetooth;
+  int balanceHeadphone;
+  boolean hiResAudio;
+  int btLatencyUs;
+  boolean adSpeakerEnable;
+  boolean adHeadphoneEnable;
+  int adVolume;
+  boolean panFadeEnable;
 }

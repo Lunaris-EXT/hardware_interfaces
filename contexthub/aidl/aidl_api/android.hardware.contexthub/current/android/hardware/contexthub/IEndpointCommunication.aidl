@@ -43,4 +43,20 @@ interface IEndpointCommunication {
   void closeEndpointSession(int sessionId, in android.hardware.contexthub.Reason reason);
   void endpointSessionOpenComplete(int sessionId);
   void unregister();
+  android.hardware.contexthub.SharedDataRegion allocateSharedDataRegion(in android.hardware.contexthub.SharedDataRegionRequirements requirements);
+  void freeSharedDataRegion(int id);
+  int registerDataFlowHostSource(in android.hardware.contexthub.EndpointId endpoint, in android.hardware.contexthub.DataFlowInfo info);
+  void unregisterDataFlowHostSource(int id);
+  void registerDataFlowOffloadSink(in android.hardware.contexthub.DataFlowSinkRegistrationParams params, in android.hardware.contexthub.IEndpointCommunication.IRegisterOffloadSinkCallback callback);
+  void unregisterDataFlowHostSink(in android.hardware.contexthub.EndpointId sinkId, in android.hardware.contexthub.DataFlowId dataFlowId);
+  const int SESSION_ID_INVALID = (-1) /* -1 */;
+  @VintfStability
+  enum SharedDataErrors {
+    ERR_INSUFFICIENT_MEMORY = 1,
+    ERR_INVALID_CONFIGURATION = 2,
+  }
+  @VintfStability
+  interface IRegisterOffloadSinkCallback {
+    long addSinkInRegion(in @nullable android.hardware.contexthub.SharedDataRegion region);
+  }
 }

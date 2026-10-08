@@ -62,6 +62,7 @@ interface IGnssCallback {
   const int CAPABILITY_SATELLITE_PVT = (1 << 13) /* 8192 */;
   const int CAPABILITY_MEASUREMENT_CORRECTIONS_FOR_DRIVING = (1 << 14) /* 16384 */;
   const int CAPABILITY_ACCUMULATED_DELTA_RANGE = (1 << 15) /* 32768 */;
+  const int CAPABILITY_ENGINE_RESTART_AFTER_POWER_MODE_CHANGE = (1 << 16) /* 65536 */;
   @Backing(type="int") @VintfStability
   enum GnssStatusValue {
     NONE = 0,
@@ -81,13 +82,21 @@ interface IGnssCallback {
   @VintfStability
   parcelable GnssSvInfo {
     int svid;
+    /**
+     * @deprecated use signalType
+     */
     android.hardware.gnss.GnssConstellationType constellation;
     float cN0Dbhz;
     float basebandCN0DbHz;
     float elevationDegrees;
     float azimuthDegrees;
+    /**
+     * @deprecated use signalType
+     */
     long carrierFrequencyHz;
     int svFlag;
+    @nullable android.hardware.gnss.GnssSignalType signalType;
+    @nullable android.hardware.gnss.ElapsedRealtime elapsedRealtime;
   }
   @VintfStability
   parcelable GnssSystemInfo {

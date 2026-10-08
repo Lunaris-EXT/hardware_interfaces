@@ -56,9 +56,14 @@ parcelable CodecInfo {
     int[] bitdepth;
     @nullable android.hardware.bluetooth.audio.ConfigurationFlags flags;
   }
+  parcelable LeAudioPeripheral {
+    android.hardware.bluetooth.audio.ConfigurationFlags flags;
+    android.hardware.bluetooth.audio.LeAudioPeripheralCapabilities[] codecCapabilities;
+  }
   union Transport {
     android.hardware.bluetooth.audio.CodecInfo.LeAudio leAudio;
     android.hardware.bluetooth.audio.CodecInfo.A2dp a2dp;
     android.hardware.bluetooth.audio.CodecInfo.Hfp hfp;
+    android.hardware.bluetooth.audio.CodecInfo.LeAudioPeripheral leAudioPeripheral;
   }
 }

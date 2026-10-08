@@ -115,4 +115,11 @@ union PictureParameter {
   int colorTunerLuminanceFlesh;
   boolean activeProfile;
   android.hardware.tv.mediaquality.PictureQualityEventType pictureQualityEventType;
+  android.hardware.tv.mediaquality.StreamStatus streamStatus;
+  android.hardware.tv.mediaquality.MemcEffect memcEffect;
+  int memcDeblur;
+  int memcDejudder;
+  boolean realCinema;
+  android.hardware.tv.mediaquality.ThreeDMode threeDMode;
+  android.hardware.tv.mediaquality.ThreeDMode threeDToTwoD;
 }

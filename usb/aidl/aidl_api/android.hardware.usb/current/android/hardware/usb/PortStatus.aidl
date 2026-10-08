@@ -54,4 +54,13 @@ parcelable PortStatus {
   android.hardware.usb.ComplianceWarning[] complianceWarnings = {};
   android.hardware.usb.PlugOrientation plugOrientation = android.hardware.usb.PlugOrientation.UNKNOWN;
   android.hardware.usb.AltModeData[] supportedAltModes = {};
+  @nullable android.hardware.usb.PortPartnerStatus partnerStatus;
+  boolean supportsPartnerBc12Type = false;
+  boolean supportsPowerProfiles = false;
+  @nullable android.hardware.usb.PowerProfile[] sinkPowerProfiles;
+  @nullable android.hardware.usb.PowerProfile[] sourcePowerProfiles;
+  @nullable android.hardware.usb.PowerProfileMatchResult[] sinkMatchResults;
+  @nullable android.hardware.usb.PowerProfileMatchResult[] sourceMatchResults;
+  @nullable android.hardware.usb.CableStatus cableStatus;
+  android.hardware.usb.UsbDeviceRef[] downstreamConnections = {};
 }
